@@ -46,13 +46,42 @@ public class OrderActivity extends AppCompatActivity {
         // extract data from the intent
         int doubleDouble, cheeseBurger, frenchFries, shakes, smallDrink, mediumDrink, largeDrink;
         // parse to Integer and toString
-        doubleDouble = Integer.parseInt(doubleDoubleEditText.getText().toString());
-        cheeseBurger = Integer.parseInt(cheeseBurgerEditText.getText().toString());
-        frenchFries = Integer.parseInt(frenchFriesEditText.getText().toString());
-        shakes = Integer.parseInt(shakesEditText.getText().toString());
-        smallDrink = Integer.parseInt(smallDrinkEditText.getText().toString());
-        mediumDrink = Integer.parseInt(mediumDrinkEditText.getText().toString());
-        largeDrink = Integer.parseInt(largeDrinkEditText.getText().toString());
+        // surround each with try/catch for empty EditText fields
+        try {
+            doubleDouble = Integer.parseInt(doubleDoubleEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            doubleDouble = 0;
+        }
+        try {
+            cheeseBurger = Integer.parseInt(cheeseBurgerEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            cheeseBurger = 0;
+        }
+        try {
+            frenchFries = Integer.parseInt(frenchFriesEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            frenchFries = 0;
+        }
+        try {
+            shakes = Integer.parseInt(shakesEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            shakes = 0;
+        }
+        try {
+            smallDrink = Integer.parseInt(smallDrinkEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            smallDrink = 0;
+        }
+        try {
+            mediumDrink = Integer.parseInt(mediumDrinkEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            mediumDrink = 0;
+        }
+        try {
+            largeDrink = Integer.parseInt(largeDrinkEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            largeDrink = 0;
+        }
         // Let's send the data to the Model (Order.java)
         order = new Order();
         // set order variables
@@ -67,10 +96,14 @@ public class OrderActivity extends AppCompatActivity {
         // Let's instantiate the Intent and navigate to SummaryActivity
         Intent intent = new Intent(this, SummaryActivity.class);
         // Put data into Intent
-        intent.putExtra("OrderTotal", currency.format(order.calculateTotal()));
-        intent.putExtra("ItemsOrdered", order.getNumberItemsOrdered());
-        intent.putExtra("Subtotal", currency.format(order.calculateSubtotal()));
-        intent.putExtra("Tax", currency.format(order.calculateTax()));
+        intent.putExtra("OrderTotal",
+                "Order Total: " + currency.format(order.calculateTotal()));
+        intent.putExtra("ItemsOrdered",
+                "Items Ordered: " + order.getNumberItemsOrdered());
+        intent.putExtra("Subtotal",
+                "Subtotal: " + currency.format(order.calculateSubtotal()));
+        intent.putExtra("Tax",
+                "Tax (8%): " + currency.format(order.calculateTax()));
         // Fire off the Intent
         startActivity(intent);
     }
