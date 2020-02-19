@@ -1,0 +1,22 @@
+<resources>
+    <!-- activity_order.xml -->
+    <string name="app_name">In And Out</string>
+    <string name="order_activity_title">Place an Order</string>
+    <string name="double_double_label">Double Double $3.60</string>
+    <string name="cheeseburger_label">Cheeseburger $2.15</string>
+    <string name="french_fries_label">French Fries $1.65</string>
+    <string name="shakes_label">Shakes $2.20</string>
+    <string name="fountain_drink_label">Fountain Drinks (pick size)</string>
+    <string name="small_label">Small $1.45</string>
+    <string name="medium_label">Medium $1.55</string>
+    <string name="large_label">Large $1.75</string>
+    <string name="place_order_button">Place Order</string>
+
+    <!-- activity_summary.xml -->
+    <string name="order_total_label">Order Total</string>
+    <string name="default_value">0</string>
+    <string name="items_ordered_label">Items Ordered: </string>
+    <string name="subtotal_label">Subtotal: </string>
+    <string name="tax_label">"Tax (8%): "</string>
+    <string name="start_new_order_button">Start New Order</string>
+</resources>
