@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+/**
+ * SummaryActivity
+ * Displays calculations and information from OrderActivity
+ */
 public class SummaryActivity extends AppCompatActivity {
 
     // Instance variables
@@ -18,6 +22,14 @@ public class SummaryActivity extends AppCompatActivity {
     private TextView subtotalTextView;
     private TextView taxTextView;
 
+    // variable to save TextView label
+    String orderTotalLabel, itemsOrderedLabel, subtotalLabel, taxLabel;
+
+    /**
+     * Creates the Summary Activity and retrieves Intent information
+     * to display in TextViews
+     * @param savedInstanceState    state of Activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +43,27 @@ public class SummaryActivity extends AppCompatActivity {
 
         // Receive the intent (from OrderActivity)
         Intent intent = getIntent();
-
+        // get TextView text before displaying calculations
+        orderTotalLabel = (String) orderTotalTextView.getText();
+        itemsOrderedLabel = (String) itemsOrderedTextView.getText();
+        subtotalLabel = (String) subtotalTextView.getText();
+        taxLabel = (String) taxTextView.getText();
         // Populate the text views with the data from the order model
-        orderTotalTextView.setText(intent.getStringExtra("OrderTotal"));
-        itemsOrderedTextView.setText(intent.getStringExtra("ItemsOrdered"));
-        subtotalTextView.setText(intent.getStringExtra("Subtotal"));
-        taxTextView.setText(intent.getStringExtra("Tax"));
+        orderTotalTextView.setText(String.format("%s %s", orderTotalLabel,
+                intent.getStringExtra("OrderTotal")));
+        itemsOrderedTextView.setText(String.format("%s%s", itemsOrderedLabel,
+                intent.getStringExtra("ItemsOrdered")));
+        subtotalTextView.setText(String.format("%s %s", subtotalLabel,
+                intent.getStringExtra("Subtotal")));
+        taxTextView.setText(String.format("%s %s", taxLabel,
+                intent.getStringExtra("Tax")));
     }
 
+    /**
+     * When startNewOrderButton is pressed this activity is done
+     * and returns to OrderActivity
+     * @param v view
+     */
     public void returnToOrderActivity(View v) {
         // Done with SummaryActivity, so "finish" / terminate it
         finish();

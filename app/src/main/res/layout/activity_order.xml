@@ -57,7 +57,9 @@
                 android:ems="10"
                 android:gravity="start"
                 android:inputType="number"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:autofillHints=""
+                tools:ignore="LabelFor,UnusedAttribute" />
         </TableRow>
 
         <TableRow
@@ -80,7 +82,9 @@
                 android:ems="10"
                 android:gravity="start"
                 android:inputType="number"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:autofillHints=""
+                tools:ignore="LabelFor,UnusedAttribute" />
         </TableRow>
 
         <TableRow
@@ -103,7 +107,9 @@
                 android:ems="10"
                 android:gravity="start"
                 android:inputType="number"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:autofillHints=""
+                tools:ignore="LabelFor,UnusedAttribute" />
         </TableRow>
 
         <TableRow
@@ -126,7 +132,9 @@
                 android:ems="10"
                 android:gravity="start"
                 android:inputType="number"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:autofillHints=""
+                tools:ignore="LabelFor,UnusedAttribute" />
         </TableRow>
 
         <TableRow
@@ -164,7 +172,9 @@
                 android:ems="10"
                 android:gravity="start"
                 android:inputType="number"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:autofillHints=""
+                tools:ignore="LabelFor,UnusedAttribute" />
         </TableRow>
 
         <TableRow
@@ -187,7 +197,10 @@
                 android:ems="10"
                 android:gravity="start"
                 android:inputType="number"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:autofillHints=""
+                tools:ignore="LabelFor"
+                tools:targetApi="o" />
         </TableRow>
 
         <TableRow
@@ -210,7 +223,9 @@
                 android:ems="10"
                 android:gravity="start"
                 android:inputType="number"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:autofillHints="" tools:targetApi="o"
+                tools:ignore="LabelFor" />
         </TableRow>
 
         <TableRow

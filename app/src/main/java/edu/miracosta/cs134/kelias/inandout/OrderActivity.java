@@ -7,12 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 
 import edu.miracosta.cs134.kelias.inandout.model.Order;
 
+/**
+ * OrderActivity
+ * Launcher Activity which takes user's food order
+ */
 public class OrderActivity extends AppCompatActivity {
 
     // Instance variables to connect the Controller with the View
@@ -27,6 +32,10 @@ public class OrderActivity extends AppCompatActivity {
     private Order order;
     private NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.getDefault());
 
+    /**
+     * Creates the Order Activity and initializes EditText views that will change
+     * @param savedInstanceState    state of Activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +51,11 @@ public class OrderActivity extends AppCompatActivity {
         largeDrinkEditText = findViewById(R.id.largeDrinkEditText);
     }
 
+    /**
+     * Gets information and calculations from current activity (order) to pass to
+     * Summary Activity using intent
+     * @param v View
+     */
     public void generateOrderSummary(View v) {
         // extract data from the intent
         int doubleDouble, cheeseBurger, frenchFries, shakes, smallDrink, mediumDrink, largeDrink;
@@ -96,14 +110,10 @@ public class OrderActivity extends AppCompatActivity {
         // Let's instantiate the Intent and navigate to SummaryActivity
         Intent intent = new Intent(this, SummaryActivity.class);
         // Put data into Intent
-        intent.putExtra("OrderTotal",
-                "Order Total: " + currency.format(order.calculateTotal()));
-        intent.putExtra("ItemsOrdered",
-                "Items Ordered: " + order.getNumberItemsOrdered());
-        intent.putExtra("Subtotal",
-                "Subtotal: " + currency.format(order.calculateSubtotal()));
-        intent.putExtra("Tax",
-                "Tax (8%): " + currency.format(order.calculateTax()));
+        intent.putExtra("OrderTotal", currency.format(order.calculateTotal()));
+        intent.putExtra("ItemsOrdered", " " + order.getNumberItemsOrdered());
+        intent.putExtra("Subtotal", currency.format(order.calculateSubtotal()));
+        intent.putExtra("Tax", currency.format(order.calculateTax()));
         // Fire off the Intent
         startActivity(intent);
     }
