@@ -37,8 +37,7 @@ An Intent will be created that sends the necessary information to a second activ
 called SummaryActivity.  Below is a sample transaction showing the flow of  
 information from OrderActivity to SummaryActivity:
 
-<img src="./screenshots/OrderActivity.png" alt="OrderActivity.png" height="550">
-&emsp;
+<img src="./screenshots/OrderActivity.png" alt="OrderActivity.png" height="550"> &emsp;
 <img src="./screenshots/SummaryActivity.png" alt="SummaryActivity.png" height="550">
 
 **Order.java model class diagram**
