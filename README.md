@@ -1,5 +1,5 @@
 # InAndOut
-Android app using multiple Activities and Intent
+> Android app using multiple Activities and Intent
 
 ## Screenshot
 <table>
