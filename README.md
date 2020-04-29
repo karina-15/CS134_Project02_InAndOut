@@ -1,14 +1,23 @@
-# CS134_Project02_InAndOut
+# InAndOut
 Android app using multiple Activities and Intent
 
 ## Screenshot
-**Order Activity**
-
-<img src="./screenshots/order-activity-screenshot.png" alt="order-activity-screenshot.png" height="550">
-
-**Summary Activity**
-
-<img src="./screenshots/summary-activity-screenshot.png"  alt="summary-activity-screenshot.png" height="550">
+<table>
+  <thead>
+    <tr><th align="center"> <strong>Order Activity</strong> </th>
+        <th align="center"> <strong>Summary Activity</strong> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td align="center">
+            <img src="./screenshots/order-activity-screenshot.png" alt="order-activity-screenshot.png" height="550">
+        </td>
+        <td align="center">
+            <img src="./screenshots/summary-activity-screenshot.png"  alt="summary-activity-screenshot.png" height="550">
+        </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Instructions
 As our first project using multiple Activities and Intents, we will be implementing  
@@ -29,7 +38,6 @@ called SummaryActivity.  Below is a sample transaction showing the flow of
 information from OrderActivity to SummaryActivity:
 
 <img src="./screenshots/OrderActivity.png" alt="OrderActivity.png" height="550">
-<br/>
 <img src="./screenshots/SummaryActivity.png" alt="SummaryActivity.png" height="550">
 
 **Order.java model class diagram**
